@@ -39,7 +39,7 @@ use crate::public::*;
 use crate::signature::*;
 
 /// An EdDSA secret key.
-#[derive(Default)] // we derive Default in order to use the clear() method in Drop
+#[derive(Default, Clone)] // we derive Default in order to use the clear() method in Drop
 pub struct SecretKey(pub(crate) [u8; SECRET_KEY_LENGTH]);
 
 impl Debug for SecretKey {
